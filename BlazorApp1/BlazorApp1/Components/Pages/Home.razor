@@ -1,0 +1,71 @@
+﻿@page "/"
+@rendermode InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+<br />
+<MudButton Color="Color.Secondary" Variant="Variant.Outlined">
+	Số lượng còn lại : @Count
+</MudButton>
+
+<MudButton Variant="Variant.Filled" OnClick="TestClick" Color="Color.Primary">Mua hàng</MudButton>
+
+<br />
+<br />
+<br />
+
+
+<MudGrid>
+	<MudItem Class=" md= 6 xs=3" >
+		<MudTextField @bind-Value="x" Label="Nhập giá trị của x" Style="width: 200px" Variant="Variant.Outlined" />
+	</MudItem>
+
+	<MudItem Class=" md= 6 xs=3" >
+		<MudTextField @bind-Value="y" Label="Nhập giá trị của y" Style="width: 200px" Variant="Variant.Outlined" Class=" md= 6 xs=3"/>
+	</MudItem>
+</MudGrid>
+
+<MudButton OnClick="Sum" Variant="Variant.Filled">Lấy kết quả</MudButton>
+<MudText style= "font-size:40px;">Ta có x + y = @sum</MudText>
+
+<MudIconButton Icon="@Icons.Material.Filled.ArrowLeft" Size="Size.Large" Color="Color.Secondary" OnClick="ArrowLeft" />
+<MudIconButton Icon="@Icons.Material.Filled.ArrowDropUp" Size="Size.Large" Color="Color.Secondary" OnClick="ArrowDropUp" />
+<MudIconButton Icon="@Icons.Material.Filled.ArrowDropDown" Size="Size.Large" Color="Color.Secondary" OnClick="ArrowDropDown" />
+<MudIconButton Icon="@Icons.Material.Filled.ArrowLeft" Size="Size.Large" Color="Color.Secondary" OnClick="ArrowRight" />
+
+
+
+@code{
+	private int x;
+	private int y;
+	private int sum;
+	private int Count = 10;
+	private void TestClick()
+	{
+		Console.WriteLine($"{DateTime.Now}: I'm Here");
+		Count--;
+	}
+	private void Sum()
+	{
+		sum = x + y;
+	}
+
+	private void ArrowLeft()
+	{
+		
+	}
+	private void ArrowDropUp()
+	{
+
+	}
+	private void ArrowDropDown()
+	{
+		
+	}
+	private void ArrowRight()
+	{
+
+	}
+}
